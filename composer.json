@@ -1,0 +1,13 @@
+{
+    "require": {
+        "mailjet/mailjet-apiv3-php": "^1.5",
+        "pusher/pusher-php-server": "^6.1",
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "google/apiclient": "^2.12",
+        "chriskacerguis/codeigniter-restserver": "^3.1",
+        "yidas/codeigniter-model": "^2.19",
+        "phpoffice/phpspreadsheet": "^1.23",
+        "vlucas/phpdotenv":"^2.1",
+        "sentry/sdk": "^4.0"
+    }
+}

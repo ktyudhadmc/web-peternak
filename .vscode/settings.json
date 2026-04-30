@@ -1,0 +1,36 @@
+{
+  // "git.ignoreLimitWarning": true,
+  // "sqltools.connections": [
+  //     {
+  //         "mysqlOptions": {
+  //             "authProtocol": "default",
+  //             "enableSsl": "Disabled"
+  //         },
+  //         "previewLimit": 50,
+  //         "server": "193.168.194.192",
+  //         "port": 3306,
+  //         "driver": "MySQL",
+  //         "name": "Peternak.ID",
+  //         "group": "peternak",
+  //         "username": "u1734578_peternak_id",
+  //         "database": "u1734578_peternak.id",
+  //         "password": "u1734578_peternak.id"
+  //     },
+  //     {
+  //         "mysqlOptions": {
+  //             "authProtocol": "default",
+  //             "enableSsl": "Disabled"
+  //         },
+  //         "previewLimit": 50,
+  //         "server": "localhost",
+  //         "port": 3306,
+  //         "driver": "MySQL",
+  //         "group": "peternak",
+  //         "name": "Local Peternak",
+  //         "database": "db_peternak",
+  //         "username": "root",
+  //         "password": ""
+  //     }
+  // ]
+  "intelephense.diagnostics.undefinedProperties": false
+}

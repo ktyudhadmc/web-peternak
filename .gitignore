@@ -1,0 +1,23 @@
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+datagroupingkandang*.json
+datakandang*.json
+datauser*.json
+
+ci_sessions/
+
+# Env
+.env
+
+#vendor
+vendor/
