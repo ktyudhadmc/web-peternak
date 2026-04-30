@@ -495,9 +495,7 @@ class MData extends CI_Model
         $this->reconnect();
         if ($this->db->insert($table, $data)) {
             $insert_id = $this->db->insert_id();
-
             return  $insert_id;
-            // return tru?e;
         } else {
             return false;
         }
