@@ -1,0 +1,19 @@
+{
+  "project_name": "Web Peternak API",
+  "base_url": "http://web-peternak.test",
+  "version": "1.0.0",
+  "auth_type": "Bearer Token (JWT)",
+  "more_info": "Ada di Postman Collection",
+  "routes": [
+    {
+      "name": "Request OTP",
+      "endpoint": "/api/auth/request_otp",
+      "method": "POST"
+    },
+    {
+      "name": "Verify OTP",
+      "endpoint": "/api/auth/verify_otp",
+      "method": "POST"
+    }
+  ]
+}
