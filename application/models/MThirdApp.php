@@ -277,37 +277,41 @@ class MThirdApp extends CI_Model
         curl_close($curl);
         return json_decode($response, true);
     }
-    // DISABLE - 260416 - YUDHA
-    // public function sendotpwa1($message, $to, $role, $waverif = NULL)
-    // {
-    //     if ($waverif == 1) {
-    //     }
-    //     $url = $_ENV['WHATSAPP_API_URL'] . '/send';
-    //     $post = "number={$to}&message={$message}";
-    //     $curl = curl_init();
 
-    //     curl_setopt_array($curl, array(
-    //         CURLOPT_URL => $url,
-    //         CURLOPT_RETURNTRANSFER => true,
-    //         CURLOPT_ENCODING => '',
-    //         CURLOPT_MAXREDIRS => 10,
-    //         CURLOPT_TIMEOUT => 0,
-    //         CURLOPT_FOLLOWLOCATION => true,
-    //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    //         CURLOPT_CUSTOMREQUEST => 'POST',
-    //         CURLOPT_POSTFIELDS => $post,
-    //         CURLOPT_HTTPHEADER => array(
-    //             'Content-Type: application/x-www-form-urlencoded'
-    //         ),
-    //     ));
+    public function sendWa($to, $message)
+    {
+        $url = $_ENV['WHATSAPP_BASE_URL'] . '/api/public/send-message';
+        $body = json_encode(array('to' => $to, 'message' => $message), JSON_UNESCAPED_UNICODE);
 
-    //     $response = curl_exec($curl);
+        $curl = curl_init();
 
-    //     curl_close($curl);
-    //     // }
-    //     return json_decode($response, true);
-    // }
-    // END DISABLE - 260416 - YUDHA
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $body,
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'Expect:',
+                'Connection: keep-alive'
+            ),
+            // OPTIMASI JARINGAN
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+            CURLOPT_ENCODING => '',
+        ));
+        curl_setopt($curl, CURLOPT_TIMEOUT_MS, 1000);
+
+        $response = curl_exec($curl);
+
+        if (curl_errno($curl)) {
+            $error_msg = curl_error($curl);
+            curl_close($curl);
+            return ['status' => false, 'message' => $error_msg];
+        }
+
+        curl_close($curl);
+        return json_decode($response, true);
+    }
 
     public function sendotpwa1($message, $to, $role, $waverif = NULL)
     {

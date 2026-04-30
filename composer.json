@@ -3,6 +3,7 @@
         "mailjet/mailjet-apiv3-php": "^1.5",
         "pusher/pusher-php-server": "^6.1",
         "mobiledetect/mobiledetectlib": "^2.8",
+        "firebase/php-jwt": "5.5.1 as 6.11.1",
         "google/apiclient": "^2.12",
         "chriskacerguis/codeigniter-restserver": "^3.1",
         "yidas/codeigniter-model": "^2.19",
