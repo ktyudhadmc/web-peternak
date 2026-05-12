@@ -32,5 +32,6 @@
   //         "password": ""
   //     }
   // ]
-  "intelephense.diagnostics.undefinedProperties": false
+  "intelephense.diagnostics.undefinedProperties": false,
+  "postman.settings.dotenv-detection-notification-visibility": false
 }

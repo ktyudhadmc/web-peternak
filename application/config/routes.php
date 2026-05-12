@@ -55,3 +55,21 @@ $route['translate_uri_dashes'] = FALSE;
 $route['main'] = 'home';
 $route['api'] = 'error404';
 $route['main/profile/(:any)'] = 'main/profile/index/$1';
+
+// ===== API Routes =====
+$route['api/auth/request-otp']['post'] = 'api/auth/request_otp';
+$route['api/auth/verify-otp']['post'] = 'api/auth/verify_otp';
+$route['api/auth/me']['get'] = 'api/auth/user_profile';
+
+// $route['api/contract']['get'] = 'api/contract/index';
+$route['api/contract']['post'] = 'api/contract/create';
+$route['api/contract/(:num)']['get'] = 'api/contract/show/$1';
+$route['api/contract/(:num)']['put'] = 'api/contract/update/$1';
+$route['api/contract/(:num)']['delete'] = 'api/contract/delete/$1';
+
+// ===== Create Materials PriceList Contract =====
+$route['api/contract/material']['post'] = 'api/contract/createMaterials';
+$route['api/contract/sales']['post'] = 'api/contract/createSales';
+
+// ===== RHPP =====
+$route['api/rhpp/(:num)/(:any)']['get'] = 'api/rhpp/getrhpp/$1/$2';

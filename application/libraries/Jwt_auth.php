@@ -29,7 +29,7 @@ class Jwt_auth {
     public function validate() {
         $header = $this->CI->input->get_request_header('Authorization');
         if (!$header) {
-            $this->send_error("Token tidak ditemukan");
+            $this->send_error("Unauthenticated");
         }
 
         $token = str_replace('Bearer ', '', $header);
